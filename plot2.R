@@ -35,7 +35,8 @@ colnames(pwr1)[1] <- "datetime"
 # Plot the curve and save to the file
 #
 
+png(file = "plot2.png")
+
 plot(pwr1$datetime, levels(pwr1[,3])[pwr1[,3]], type="l", xlab = "", ylab = "Global Active Power (kilowatts)")
 
-dev.copy(png, file = "plot2.png")
 dev.off()

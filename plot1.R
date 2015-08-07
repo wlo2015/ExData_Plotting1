@@ -23,14 +23,11 @@ pwr <- read.table("./pwrdata/household_power_consumption.txt", sep = ";", header
 pwr1 <- pwr[which(pwr$Date == "2/2/2007" | pwr$Date == "1/2/2007"),]
 
 #
-# Plot the histogram with the required features
+# Plot the histogram and save in 'png' format
 #
 
-hist(as.numeric(as.character(pwr2$Global_active_power)), main="Global Active Power", col="red", xlab = "Global Active Power (kilowatts)")
+png(file = "plot1.png")
 
-#
-# Save the plot to the file in 'png' format
-#
+hist(as.numeric(as.character(pwr1$Global_active_power)), main="Global Active Power", col="red", xlab = "Global Active Power (kilowatts)")
 
-dev.copy(png, file = "plot1.png")
 dev.off()
